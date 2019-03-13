@@ -1,58 +1,53 @@
-const path = require('path')
-
+const path = require("path");
+const webpack = require("webpack");
+ 
 module.exports = {
-  entry: './',
-  target: 'web',
-  devtool: false,
-  mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.less$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'less-loader',
-            options: {
-              paths: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'theme')],
+    output: {
+      path: path.resolve(__dirname, "build"),
+      filename: "bundle.js",
+      publicPath: "/"
+    },
+    resolve: {
+      modules: [__dirname, "node_modules"],
+      extensions: ["*", ".js", ".jsx"]
+    },
+    devtool: "source-map",
+    module: {
+      rules: [
+        {
+          test: /\.svg$/,
+          loader: 'svg-react-loader'
+        },
+        {
+          test: /\.(s*)css$/,
+          use: [
+            {
+              loader: 'style-loader'
             },
-          },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-            options: {
-              insertAt: {
-                before: 'link',
-              },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2
+              }
             },
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
-      },
-      {
-        test: /\.(svg|gif|jpe?g|png)$/,
-        loader: 'url-loader?limit=10000',
-      },
-      {
-        test: /\.(eot|woff|woff2|ttf)$/,
-        loader: 'url-loader?limit=100000',
-      },
-    ],
-  },
-}
+            {
+              loader: 'sass-loader'
+            }
+          ]
+        },
+        {
+          loader: "babel-loader",
+          test: /\.js?$/,
+          exclude: /node_modules/,
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          }
+        },
+        {
+          enforce: "pre",
+          test: /\.js$/,
+          loader: "source-map-loader"
+        }
+      ]
+    }
+};
