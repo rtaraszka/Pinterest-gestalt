@@ -62,7 +62,8 @@
     "test": "./scripts/test.sh",
     "test:integration": "./run_integration_tests",
     "format": "prettier --write \"{.babelrc.json,.eslintrc,**/*.{js,css,md}}\"",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "uxpin:experiment": "uxpin-merge --webpack-config ./webpack.uxpin.config.js --wrapper ./src/uxpinWrapper/UXPinWrapper.jsx"
   },
   "jest": {
     "projects": [
