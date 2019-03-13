@@ -11,7 +11,6 @@ module.exports = {
       modules: [__dirname, "node_modules"],
       extensions: ["*", ".js", ".jsx"]
     },
-    devtool: "source-map",
     module: {
       rules: [
         {
@@ -43,11 +42,6 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           }
         },
-        {
-          enforce: "pre",
-          test: /\.js$/,
-          loader: "source-map-loader"
-        }
       ]
     }
 };
