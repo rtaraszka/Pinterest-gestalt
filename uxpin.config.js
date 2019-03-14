@@ -4,10 +4,12 @@ module.exports = {
         {
           name: 'General',
           include: [
-            'packages/gestalt/src/Button.js',
+            'packages/gestalt/src/Button/Button.js',
           ]
         }
       ]
     },
     name: 'Pinterest Gestalt'
   };
+
+  

@@ -1,5 +1,5 @@
 {
-  "presets": ["env", "stage-1", "react"],
+  "presets": ["@babel/preset-flow", "@babel/preset-env", "@babel/preset-react"],
   "env": {
     "testing": {
       "plugins": [
