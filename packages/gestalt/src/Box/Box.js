@@ -17,12 +17,12 @@ I'll explain each part as we go through. Just remember, if you want to make upda
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Box.css';
-import borders from './Borders.css';
-import colors from './Colors.css';
-import layout from './Layout.css';
-import whitespace from './boxWhitespace.css';
-import whitespaceLegacy from './Whitespace.css';
+import styles from '../Box.css';
+import borders from '../Borders.css';
+import colors from '../Colors.css';
+import layout from '../Layout.css';
+import whitespace from '../boxWhitespace.css';
+import whitespaceLegacy from '../Whitespace.css';
 import {
   concat,
   fromClassName,
@@ -30,7 +30,7 @@ import {
   identity,
   mapClassName,
   toProps,
-} from './style.js';
+} from '../style.js';
 import {
   union,
   bind,
@@ -38,7 +38,7 @@ import {
   toggle,
   mapping,
   rangeWithoutZero,
-} from './transforms.js';
+} from '../transforms.js';
 
 /*
 

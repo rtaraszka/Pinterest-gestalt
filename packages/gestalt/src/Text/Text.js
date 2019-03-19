@@ -3,9 +3,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import colors from './Colors.css';
-import styles from './Text.css';
-import typography from './Typography.css';
+import colors from '../Colors.css';
+import styles from '../Text.css';
+import typography from '../Typography.css';
 
 const SIZE_SCALE: { [size: ?string]: number } = {
   xs: 1,

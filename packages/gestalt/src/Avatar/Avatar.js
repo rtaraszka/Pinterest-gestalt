@@ -1,11 +1,11 @@
 // @flow
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Box from './Box.js';
-import Icon from './Icon.js';
-import Image from './Image.js';
-import Mask from './Mask.js';
-import typography from './Typography.css';
+import Box from '../Box/Box.js/index.js';
+import Icon from '../Icon.js';
+import Image from '../Image.js';
+import Mask from '../Mask.js';
+import typography from '../Typography.css';
 
 const Square = (props: *) => (
   <Box {...props} position="relative">

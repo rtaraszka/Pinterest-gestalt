@@ -2,10 +2,10 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import colors from './Colors.css';
-import styles from './Checkbox.css';
-import Box from './Box.js';
-import Icon from './Icon.js';
+import colors from '../Colors.css';
+import styles from '../Checkbox.css';
+import Box from '../Box/Box';
+import Icon from '../Icon.js';
 
 type Props = {|
   checked?: boolean,
@@ -45,6 +45,7 @@ export default class Checkbox extends React.Component<Props, State> {
     hasError: false,
     indeterminate: false,
     size: 'md',
+    onChange: () => {},
   };
 
   state = {
